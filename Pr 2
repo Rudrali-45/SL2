@@ -1,0 +1,27 @@
+#2)Mccoullch pitts
+
+
+def mp_and_not(A, B):
+    # weights
+    w1 = 1    # A
+    w2 = -1   # B (inhibitory)
+
+    # threshold
+    theta = 1
+
+    # weighted sum
+    net_input = (w1 * A) + (w2 * B)
+
+    # EX: A=1, B=1  --> net = (1*1) + (-1*1) = 1 - 1 = 0
+
+    # activation (step function)
+    if net_input >= theta:
+        return 1
+    else:
+        return 0
+
+# Testing all inputs
+inputs = [(0,0), (0,1), (1,0), (1,1)]
+
+for A, B in inputs:
+    print(A, B, "->", mp_and_not(A, B))
